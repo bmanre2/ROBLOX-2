@@ -3,7 +3,7 @@ Core={
 		["gavinsharp100"]={
 			Name="gavinsharp100";
 			Settings={
-				BetKey="@";
+				BetKey="";
 				AutoDismiss=false;
 			};
 			Data={
@@ -15,7 +15,7 @@ Core={
 		["Dontnukeme"]={
 			Name="Dontnukeme";
 			Settings={
-				BetKey="@";
+				BetKey="";
 				AutoDismiss=false;
 			};
 			Data={
@@ -27,7 +27,7 @@ Core={
 		["moshi88"]={--For studio testing.
 			Name="moshi88";
 			Settings={
-				BetKey="@";
+				BetKey="";
 				AutoDismiss=false;
 			};
 			Data={
