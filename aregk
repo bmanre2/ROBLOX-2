@@ -1534,7 +1534,7 @@ function print(...)
 end
  
 CharacterAppearance = {};
-CharacterAppearance.DefaultAppearanceId = 1
+DefaultAppearance = 3
  
 CharacterAppearance.Create {
 	Id = 1,
