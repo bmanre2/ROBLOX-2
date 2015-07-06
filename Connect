@@ -34,20 +34,16 @@ for i,v in ipairs(game:FindService("NetworkServer"):GetChildren()) do
 					Ox(Players.Name..'Has went nil')
 end
 end
-end
+
 
 
 local Commands = {}
-CheckChat = function(msg)
-	local CmdRun = true
     for i,v in pairs(Commands) do
         if msg:lower():sub(1,#(v.Cmd..'_')) == v.Cmd..'_' then
            msg = msg:sub(#(v.Cmd..'_')+1)
-			CmdRun = true
            return v.Func(msg)
         end
     end
-end
 
 NC = function(cmd,func)
    table.insert(Commands,{Cmd = cmd,Func = func}) 
@@ -56,12 +52,10 @@ end
 NC('play',function(msg)
 SIX:Play()
 end)
-end
 
 NC('stop',function(msg)
 SIX:Stop()
 end)
-end
 
 NC('music',function(msg)
     SID = msg
