@@ -1534,66 +1534,110 @@ function print(...)
 end
  
 CharacterAppearance = {};
-DefaultAppearance = 3
  
+CharacterAppearance.defaultAppearanceId = 1
+CharacterAppearance.stock = {}
+function CharacterAppearance.Create(properties)
+        local id = properties.Id
+        local bodyColors = Instance.new("BodyColors")
+        bodyColors.HeadColor = properties.HeadColor
+        bodyColors.TorsoColor = properties.TorsoColor
+        bodyColors.RightArmColor = properties.RightArmColor
+        bodyColors.LeftArmColor = properties.LeftArmColor
+        bodyColors.RightLegColor = properties.RightLegColor
+        bodyColors.LeftLegColor = properties.LeftLegColor
+        local characterObjects = {bodyColors}
+        local headObjects = {} 
+        local data = {
+                characterObjects = characterObjects,
+                headObjects = headObjects,
+                tshirt = properties.TShirt
+        }
+        for _, assetId in ipairs(properties.CharacterAssets) do
+                TaskScheduler.Start(CharacterAppearance.LoadAsset, characterObjects, assetId)
+        end
+        for _, assetId in ipairs(properties.HeadAssets) do
+                TaskScheduler.Start(CharacterAppearance.LoadAsset, headObjects, assetId)
+        end
+        CharacterAppearance.stock[id] = data
+end
+function CharacterAppearance.GetDefaultAppearance()
+        return CharacterAppearance.stock[CharacterAppearance.defaultAppearanceId]
+end
+function CharacterAppearance.LoadAsset(objects, assetId)
+        local asset = InsertService:LoadAsset(assetId)
+        for _, child in ipairs(asset:GetChildren()) do
+                child.Archivable = true
+                table.insert(objects, child:Clone())
+        end
+end
 CharacterAppearance.Create {
-	Id = 1,
-	HeadColor = BrickColor.new("Institutional white"),
-	TorsoColor = BrickColor.new("Institutional white"),
-	RightArmColor = BrickColor.new("Institutional white"),
-	LeftArmColor = BrickColor.new("Institutional white"),
-	RightLegColor = BrickColor.new("Institutional white"),
-	LeftLegColor = BrickColor.new("Institutional white"),
-	CharacterAssets = {
-183867328,
-183864679,
-60674565,
-30331986,
-63992958
-	},
-	HeadAssets = {
-		20722130,
-		8330576
-	}
+        Id = 1,
+        HeadColor = BrickColor.new("Institutional white"),
+        TorsoColor = BrickColor.new("Institutional white"),
+        RightArmColor = BrickColor.new("Institutional white"),
+        LeftArmColor = BrickColor.new("Institutional white"),
+        RightLegColor = BrickColor.new("Institutional white"),
+        LeftLegColor = BrickColor.new("Institutional white"),
+        CharacterAssets = {
+                90825058, 90825211,
+                27112056, 27112052,
+                27112039, 27112025,
+                27112068, 38322996
+        },
+        HeadAssets = {
+                20722130,
+                8330576
+        }
 }
 CharacterAppearance.Create {
-	Id = 2,
-	HeadColor = BrickColor.new("Institutional white"),
-	TorsoColor = BrickColor.new("Institutional white"),
-	RightArmColor = BrickColor.new("Institutional white"),
-	LeftArmColor = BrickColor.new("Institutional white"),
-	RightLegColor = BrickColor.new("Institutional white"),
-	LeftLegColor = BrickColor.new("Institutional white"),
-	CharacterAssets = {
-	183867328,
-183864679,
-60674565,
-30331986,
-63992958
-
-	},
-	HeadAssets = {
-		20722130
-	}
+        Id = 2,
+        HeadColor = BrickColor.new("Institutional white"),
+        TorsoColor = BrickColor.new("Institutional white"),
+        RightArmColor = BrickColor.new("Institutional white"),
+        LeftArmColor = BrickColor.new("Institutional white"),
+        RightLegColor = BrickColor.new("Institutional white"),
+        LeftLegColor = BrickColor.new("Institutional white"),
+        CharacterAssets = {
+                90825058, 90825211,
+                11748356, 1029025,
+                1235488, 27112056,
+                27112052, 27112039,
+                27112025, 27112068
+        },
+        HeadAssets = {
+                20722130
+        }
 }
 CharacterAppearance.Create {
-	Id = 3,
-	HeadColor = BrickColor.new("Pastel brown"),
-	TorsoColor = BrickColor.new("Pastel brown"),
-	RightArmColor = BrickColor.new("Pastel brown"),
-	LeftArmColor = BrickColor.new("Pastel brown"),
-	RightLegColor = BrickColor.new("White"),
-	LeftLegColor = BrickColor.new("White"),
-	CharacterAssets = {
-	183867328,
-183864679,
-60674565,
-30331986,
-44114719
-
-	},
-	HeadAssets = {},
-	TShirt = "rbxassetid://148856353"
+        Id = 3,
+        HeadColor = BrickColor.new("Pastel brown"),
+        TorsoColor = BrickColor.new("Pastel brown"),
+        RightArmColor = BrickColor.new("Pastel brown"),
+        LeftArmColor = BrickColor.new("Pastel brown"),
+        RightLegColor = BrickColor.new("White"),
+        LeftLegColor = BrickColor.new("White"),
+        CharacterAssets = {
+                134289125, 48474356,
+                100339040, 46302558,
+                153955895
+        },
+        HeadAssets = {},
+        TShirt = "rbxassetid://148856353"
+}
+CharacterAppearance.Create {
+        Id = 4,
+        HeadColor = BrickColor.new("Pastel brown"),
+        TorsoColor = BrickColor.new("Pastel brown"),
+        RightArmColor = BrickColor.new("Pastel brown"),
+        LeftArmColor = BrickColor.new("Pastel brown"),
+        RightLegColor = BrickColor.new("White"),
+        LeftLegColor = BrickColor.new("White"),
+        CharacterAssets = {
+                129458426, 96678344, 184489190
+        },
+        HeadAssets = {},
+        TShirt = "rbxassetid://160146697"
 }
  
 GraphicalEffects = {};
