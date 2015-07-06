@@ -24,7 +24,7 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 Ox(Player.Name..'Has Disconected')
 end)
 
-game:GetService("Players").PlayerAdding:connect(function(Player)
+game:GetService("Players").PlayerAdded:connect(function(Player)
 Ox(Player.Name..'Has Connected')
 end)
 
@@ -51,10 +51,18 @@ end
 
 NC('play',function(msg)
 SIX:Play()
+wait()
+Ox('Playing Music')
 end)
 
 NC('stop',function(msg)
 SIX:Stop()
+wait()
+Ox('Stopped music')
+end)
+
+NC('sm',function(msg)
+Oxchat(msg)
 end)
 
 NC('music',function(msg)
