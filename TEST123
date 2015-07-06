@@ -248,14 +248,12 @@ function CLerp(a,b,t)
 	return QuaternionToCFrame(_t*ax+t*bx,_t*ay+t*by,_t*az+t*bz,QuaternionSlerp(qa, qb, t));
 end
 --//music notification
-
-while true do
-wait(20)
+function Ox(Message)
 for _,v in pairs(game.Players:GetPlayers()) do
  if v:IsA('Player') then 
 local msg = Instance.new('StringValue',v) 
 msg.Name = "SB_Chat" 
-msg.Value = 'Test/A song is playing : '..Core.Data.SongPlaying.Name..' :3'
+msg.Value = 'Test/'..Message..' :3'
  end 
 end
 end
@@ -333,7 +331,7 @@ Part.Transparency = 0.5
 		if PlayerE.Name==Player.Name then
 			for i=1,4 do
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X+0.1,Part.Size.Y+0.1,Part.Size.Z+0.1);
+				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y+0.1,Part.Size.Z+0.1);
 			end;
 		end;
 	end);
@@ -341,7 +339,7 @@ Part.Transparency = 0.5
 		if PlayerE.Name==Player.Name then
 			for i=1,1 do
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X-0.5,Part.Size.Y-0.5,Part.Size.Z-0.5);
+				Part.Size=Vector3.new(Part.Size.X-0.2,Part.Size.Y-0.2,Part.Size.Z-0.2);
 			end;
 		end;	
 	end);
