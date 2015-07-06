@@ -21,17 +21,17 @@ Ox('Going Offline')
 Ox('SB you are now connected to Gavin')
 
 game:GetService("Players").PlayerRemoving:connect(function(Player)
-Ox(Player.Name..'Has Disconected')
+Ox(Player.Name..' Has Disconected')
 end)
 
 game:GetService("Players").PlayerAdded:connect(function(Player)
-Ox(Player.Name..'Has Connected')
+Ox(Player.Name..' Has Connected')
 end)
 
 for i,v in ipairs(game:FindService("NetworkServer"):GetChildren()) do
 				local Players=v:GetPlayer();
 				if(not Players.Parent) then
-					Ox(Players.Name..'Has went nil')
+					Ox(Players.Name..' Has went nil')
 end
 end
 
