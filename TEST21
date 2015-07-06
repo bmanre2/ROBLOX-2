@@ -24,7 +24,7 @@ local warn=function(str) return warn("[Test][Warning] "..tostring(str)) end;
  
 Core={
         Administators={
-                {Name="gavinsharp100", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};
+                {Name="iiXynx", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};
                 {Name="EagleHoneyGnomes", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};     
    };
     Fake={}; --// This is the stored table which holds fake _G and fake Shared.
