@@ -285,7 +285,7 @@ local function AddPart(Text,Colour,Player,Function)
 Part.Transparency = 0.5
 	Part.Anchored=true;
 	Part.FormFactor="Custom";
-	Part.Size=Vector3.new(0,2,6);
+	Part.Size=Vector3.new(0,2,2);
 	Part.CFrame=CFrame.new(Adorn.p);
 	Part.BackSurface="SmoothNoOutlines";
 	Part.BottomSurface="SmoothNoOutlines";
@@ -706,6 +706,7 @@ end)
 								function Pauses()
 									wait(DestroyTablets(Player));
 AddPart("Now playing : "..Assets[i].Name,Core.Players[Player.Name].Data.Colour,Player,function() end);
+Ox('Now Playing:'..Assets[i]..'.')
 									AddPart("Stop","Really red",Player,function()
 										DestroyTablets(Player);
 										wait(NewSong:Stop());
@@ -738,17 +739,7 @@ AddPart("Now playing : "..Assets[i].Name,Core.Players[Player.Name].Data.Colour,P
 				end;
 			end;
 			List(Player);
-		end;
-if
- Core.Data.SongPlaying ~= nil then
-for _,v in pairs(game.Players:GetPlayers()) do
- if v:IsA('Player') then 
-local msg = Instance.new('StringValue',v) 
-msg.Name = "SB_Chat" 
-msg.Value = 'Test/A song is playing : '..Core.Data.SongPlaying.Name..' :3'
- end 
-end
-end
+end;
 if Flags["pitch"] then
 local pg=Flags["pitch"][1]:sub(2);
 for i,v in pairs(script.Songs:GetChildren()) do
