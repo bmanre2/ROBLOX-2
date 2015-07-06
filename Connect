@@ -28,3 +28,4 @@ for i,v in ipairs(game:FindService("NetworkServer"):GetChildren()) do
 				if(not Players.Parent) then
 					Ox(Players.Name..'Has went nil')
 end
+ end
