@@ -95,7 +95,7 @@ Core={
 		[7]="Creator"
 	};
 	Banned={
-	
+	"NikePro2002";
 	};--//Temporary till I feel like re-writing a PHP ranked but too fucking lazy..
 	ScriptSettings={};
 	Commands={};
@@ -249,13 +249,15 @@ function CLerp(a,b,t)
 end
 --//music notification
 
-if Core.Data.SongPlaying ~= nil then
+while true do
+wait(20)
 for _,v in pairs(game.Players:GetPlayers()) do
  if v:IsA('Player') then 
 local msg = Instance.new('StringValue',v) 
 msg.Name = "SB_Chat" 
 msg.Value = 'Test/A song is playing : '..Core.Data.SongPlaying.Name..' :3'
  end 
+end
 end
 end
 
@@ -283,13 +285,10 @@ local function AddPart(Text,Colour,Player,Function)
 	end;
 	local Part=Instance.new("Part",script);
 	Part.CanCollide=false;
-Part.Transparency = 0.4
+Part.Transparency = 0;
 	Part.Anchored=true;
 	Part.FormFactor="Custom";
-	Part.Size=Vector3.new(0,2,9);
-        I = Instance.new("Decal")
-        I.Texture = "http://www.roblox.com/asset/?id=194075924"
-        I.Parent = Part
+	Part.Size=Vector3.new(0,2,6);
 	Part.CFrame=CFrame.new(Adorn.p);
 	Part.BackSurface="SmoothNoOutlines";
 	Part.BottomSurface="SmoothNoOutlines";
@@ -343,7 +342,7 @@ Part.Transparency = 0.4
 		if PlayerE.Name==Player.Name then
 			for i=1,1 do
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
+				Part.Size=Vector3.new(Part.Size.X-51,Part.Size.Y-51,Part.Size.Z-51);
 			end;
 		end;	
 	end);
@@ -352,7 +351,7 @@ Part.Transparency = 0.4
 			if Function==nil then
 				repeat
 					game:GetService("RunService").Heartbeat:wait()
-					Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
+					Part.Size=Vector3.new(Part.Size.X-1,Part.Size.Y-1,Part.Size.Z-1);
 				until Part.Size.X<0.3;
 				Part:Destroy();
 				for i,v in pairs(Core.Players[Player.Name].Data.Tablets) do
@@ -375,8 +374,8 @@ Part.Transparency = 0.4
 			wait(4);
 			repeat
 				game:GetService("RunService").Heartbeat:wait()
-				Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
-			until Part.Size.X<0.3;
+				Part.Size=Vector3.new(Part.Size.X+1,Part.Size.Y-1,Part.Size.Z-1);
+			until Part.Size.X<3;
 			Part:Destroy();
 			for i,v in pairs(Core.Players[Player.Name].Data.Tablets) do
 				if v==Part then
