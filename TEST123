@@ -259,7 +259,6 @@ msg.Value = 'Test/A song is playing : '..Core.Data.SongPlaying.Name..' :3'
  end 
 end
 end
-end
 
 --//Part Assertion
 local function AddPart(Text,Colour,Player,Function)
