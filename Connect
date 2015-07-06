@@ -24,7 +24,7 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 Ox(Player.Name..'Has Disconected')
 end)
 
-game.GetService("Players").PlayerAdding:connect(function(Player)
+game:GetService("Players").PlayerAdding:connect(function(Player)
 Ox(Player.Name..'Has Connected')
 end)
 
