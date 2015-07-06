@@ -350,7 +350,7 @@ Part.Transparency = 0;
 			if Function==nil then
 				repeat
 					game:GetService("RunService").Heartbeat:wait()
-					Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z0.-1);
+					Part.Size=Vector3.new(Part.Size.X-0.1,Part.Size.Y-0.1,Part.Size.Z-0.1);
 				until Part.Size.X<0.3;
 				Part:Destroy();
 				for i,v in pairs(Core.Players[Player.Name].Data.Tablets) do
