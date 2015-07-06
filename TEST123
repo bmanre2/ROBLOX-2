@@ -705,7 +705,6 @@ end)
 								Core.Data.SongPlaying={ID=Assets[i].AssetId,Name=Assets[i].Name};
 								function Pauses()
 									wait(DestroyTablets(Player));
-Ox('Now Playing:'..Assets[i].Name'.')
 
 AddPart("Now playing : "..Assets[i].Name,Core.Players[Player.Name].Data.Colour,Player,function() end);
 									AddPart("Stop","Really red",Player,function()
@@ -1396,3 +1395,11 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
+
+Ox('Test has loaded')
+Ox('Checking Environment')
+wait(3)
+Ox('Destroying Local Blocked Owner')
+Ox('Going cilent')
+Ox('Working 100%')
+
