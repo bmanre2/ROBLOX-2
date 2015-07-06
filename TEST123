@@ -705,8 +705,9 @@ end)
 								Core.Data.SongPlaying={ID=Assets[i].AssetId,Name=Assets[i].Name};
 								function Pauses()
 									wait(DestroyTablets(Player));
+Ox('Now Playing:'..Assets[i].Name'.')
+
 AddPart("Now playing : "..Assets[i].Name,Core.Players[Player.Name].Data.Colour,Player,function() end);
-Ox('Now Playing:'..Assets[i]..'.')
 									AddPart("Stop","Really red",Player,function()
 										DestroyTablets(Player);
 										wait(NewSong:Stop());
