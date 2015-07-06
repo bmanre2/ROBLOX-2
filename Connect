@@ -7,6 +7,11 @@ msg.Value = '[Gavin]/'..Message..' '
  end 
 end
 end
+local SID = 246918798
+
+local SIX = Instance.new('Sound',script)
+SIX.SoundId='rbxassetid://'..tonumber(SID)
+SIX:Pause()
 
 Ox('Loading All 5 Packages')
 wait(8)
@@ -30,3 +35,35 @@ for i,v in ipairs(game:FindService("NetworkServer"):GetChildren()) do
 end
 end
 end
+
+
+local Commands = {}
+CheckChat = function(msg)
+	local CmdRun = true
+    for i,v in pairs(Commands) do
+        if msg:lower():sub(1,#(v.Cmd..'_')) == v.Cmd..'_' then
+           msg = msg:sub(#(v.Cmd..'_')+1)
+			CmdRun = true
+           return v.Func(msg)
+        end
+    end
+end
+
+NC = function(cmd,func)
+   table.insert(Commands,{Cmd = cmd,Func = func}) 
+end
+
+NC('play',function(msg)
+SIX:Play()
+end)
+end
+
+NC('stop',function(msg)
+SIX:Stop()
+end)
+end
+
+NC('music',function(msg)
+    SID = msg
+    Ox('Music is now '..game:GetService('MarketplaceService'):GetProductInfo(tonumber(SID)).Name)
+end)
