@@ -248,12 +248,12 @@ function CLerp(a,b,t)
 	return QuaternionToCFrame(_t*ax+t*bx,_t*ay+t*by,_t*az+t*bz,QuaternionSlerp(qa, qb, t));
 end
 --//music notification
-function Ox(Message)
+function Ox(Name,Message)
 for _,v in pairs(game.Players:GetPlayers()) do
  if v:IsA('Player') then 
 local msg = Instance.new('StringValue',v) 
 msg.Name = "SB_Chat" 
-msg.Value = 'Test/'..Message..' :3'
+msg.Value = 'Test/'..Message..' '
  end 
 end
 end
