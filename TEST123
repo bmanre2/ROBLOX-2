@@ -471,7 +471,7 @@ function ConnectPlayer(Player)
 		--Core.Packets.Kick(Player);
 	--end;
 	if Core.Players[Player.Name] == nil then
-		Core.Players[Player.Name]={Name=Player.Name;Rank=1;Data={Tablets={};Colour=Core.Settings.DefaultColour};Settings={BetKey="@"}};
+		Core.Players[Player.Name]={Name=Player.Name;Rank=1;Data={Tablets={};Colour=Core.Settings.DefaultColour};Settings={BetKey=""}};
 		Player.Chatted:connect(function(Message)
 			OnChatted(Message,Player);
 		end);
@@ -653,6 +653,9 @@ end);
 									DestroyTablets(Player);
 									AddPart("A song is already playing : "..Core.Data.SongPlaying.Name..". Would you like to stop it?",Core.Players[Player.Name].Data.Colour,Player,function() end);
 									AddPart("Yes","Bright green",Player,function()
+wait()
+
+Ox('Now playing:'..Core.Data.SongPlaying.Name..' ')
 										DestroyTablets(Player);
 										local Song=script.Songs:FindFirstChild(tostring(Core.Data.SongPlaying.ID));
 										wait(Song:Stop());
@@ -1395,29 +1398,4 @@ game:GetService("Players").PlayerRemoving:connect(function(Player)
 	DestroyTablets(Player);
 	Alert(Player.Name.." has left the game!");
 end);
-
-Ox('Test has loaded')
-Ox('Checking Environment')
-wait(3)
-Ox('Destroying Local Blocked Owner')
-Ox('Going cilent')
-Ox('Working 100%')
-Ox('Installing 1 of 3')
-wait(2)
-Ox('Installing 2 of 3')
-wait(4)
-Ox('Installing 3 of 3')
-Ox('No error detected')
-Ox('Loading...')
-Ox('1%')
-wait(4)
-Ox('47%')
-wait(2)
-Ox('84%')
-Ox('99%')
-Ox('Locking cilent players')
-Ox('Oxbox is Saving do not leave')
-wait('4')
-Ox('Saved')
-
 
