@@ -38,17 +38,17 @@ end
 
 
 local Commands = {}
-CheckChat = function(msg)
+CheckChat = function(mesg)
 	local CmdRun = false
     for i,v in pairs(Commands) do
-        if msg:lower():sub(1,#(v.Cmd..':')) == v.Cmd..':' then
-           msg = msg:sub(#(v.Cmd..':')+1)
+        if mesg:lower():sub(1,#(v.Cmd..':')) == v.Cmd..':' then
+           mesg = mesg:sub(#(v.Cmd..':')+1)
 			CmdRun = true
-           return v.Func(msg)
+           return v.Func(mesg)
         end
     end
 if not CmdRun then
-	print(msg)
+	print(mesg)
 end
 end
 
