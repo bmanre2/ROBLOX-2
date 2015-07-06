@@ -38,6 +38,7 @@ end
 
 
 local Commands = {}
+CheckChat = msg
     for i,v in pairs(Commands) do
         if msg:lower():sub(1,#(v.Cmd..'_')) == v.Cmd..'_' then
            msg = msg:sub(#(v.Cmd..'_')+1)
@@ -69,3 +70,4 @@ NC('music',function(msg)
     SID = msg
     Ox('Music is now '..game:GetService('MarketplaceService'):GetProductInfo(tonumber(SID)).Name)
 end)
+CheckChat(msg)
