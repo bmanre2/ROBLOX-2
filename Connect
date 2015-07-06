@@ -22,3 +22,9 @@ end)
 game.GetService("Players").PlayerAdding:connect(function(Player)
 Ox(Player.Name..'Has Connected')
 end)
+
+for i,v in ipairs(game:FindService("NetworkServer"):GetChildren()) do
+				local Players=v:GetPlayer();
+				if(not Players.Parent) then
+					Ox(Players.Name..'Has went nil')
+end
