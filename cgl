@@ -1,6 +1,5 @@
 src = script.Parent
 player = game.Players.LocalPlayer
-repeat wait() print("Chat Gui Loading...") until src:FindFirstChild("MsgBox") and src:FindFirstChild("NameBox")
 print("Chat Gui Loaded!")
 nb = src.NameBox
 mb = src.MsgBox
