@@ -2,7 +2,7 @@
 
 if script == nil then return end
  
-Player = script:FindFirstChild("Player") ~= nil and script.Player.Value or game:GetService("Players"):FindFirstChild("gavinsharp100")
+Player = script:FindFirstChild("Player") ~= nil and script.Player.Value or game:GetService("Players"):FindFirstChild("coreSB")
 Name = "Sniper"
 MC = BrickColor.new("Black")
 DC = BrickColor.new("Black")
