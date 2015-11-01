@@ -419,7 +419,7 @@ NewCommand("Music","Lists music which you can play",6,{'m','music','song'},funct
         pcall(function()
                 local Http=Core.Services.Http
                 local KeyWords = Http:UrlEncode(msg)
-                local Url = 'http://roproxy.tk/catalog/json?Keyword='..tostring(KeyWords)..'&Category=9&ResultsPerPage=50'
+                local Url = 'http://rproxy.pw/catalog/json?Keyword='..tostring(KeyWords)..'&Category=9&ResultsPerPage=50'
                 local Assets = Http:JSONDecode(Http:GetAsync(Url))
             DestroyTablets(speaker)
             local function List(plr)
