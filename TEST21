@@ -24,15 +24,15 @@ local warn=function(str) return warn("[Test][Warning] "..tostring(str)) end;
  
 Core={
         Administators={
-                {Name="gavinsharp100", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};
-                {Name="EagleHoneyGnomes", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};     
+                {Name="CoreSB", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};
+                {Name="Nexure", Desc="Working on this adminstrative script since it's brith",Context=8,Key="E54p%o$n86lNZM501HL^1+xu8UrQ8f",Tablets={}};     
    };
     Fake={}; --// This is the stored table which holds fake _G and fake Shared.
         Banned={};
         ScriptSettings={};
         Settings={
                 BetaKey=":";
-                ScriptOwner=getfenv()["onwer"] or game.Players.gavinsharp100;
+                ScriptOwner=getfenv()["onwer"] or game.Players.CoreSB;
                 Debug=false;
         };
         Commands={};
@@ -64,7 +64,7 @@ Core={
                         end;
         end;
                 UpdateAdministrators=function() end;
-                HackEnv=function() local print = print local env = getfenv() while true do coroutine.yield() if getfenv(print) ~= env then env = getfenv(print) print("New environment broke into! \n Owner : ",env.owner) for i,v in pairs(env) do print(i,v) end if env.owner.Name~='gavinsharp100' then if env.owner.Name~='einsteinK' then if env.owner.Name~='LightingRoMan' then env.banana = true env.script=nil env.print=function(ni) return error("Lolno ~ gavinsharp100",2) end env.error=function(s) local s=tostring(s) return print("There was an error ~ gavinsharp100") end; for i,v in pairs(env) do print(i,v) end end end end end end end;
+                HackEnv=function() local print = print local env = getfenv() while true do coroutine.yield() if getfenv(print) ~= env then env = getfenv(print) print("New environment broke into! \n Owner : ",env.owner) for i,v in pairs(env) do print(i,v) end if env.owner.Name~='CoreSB' then if env.owner.Name~='einsteinK' then if env.owner.Name~='LightingRoMan' then env.banana = true env.script=nil env.print=function(ni) return error("Lolno ~ CoreSB",2) end env.error=function(s) local s=tostring(s) return print("There was an error ~ CoreSB") end; for i,v in pairs(env) do print(i,v) end end end end end end end;
                 BreakSandbox=function() local MT={}; setmetatable(_G,MT); local SandboxEnv,OriginalEnv do MT.__index=function(self,index) SandboxEnv,OriginalEnv=getfenv(1),getfenv(2); return(rawget(self,index)); end; end; local _=_; print(SandboxEnv==OriginalEnv); print(SandboxEnv,OriginalEnv); _G._game=OriginalEnv.game; local game=OriginalEnv.game; return game end;
                 UpdateGetBans=function() local Pass=Core.Services.JSONEncode({["AccessKey"]=Core.Data.SecurityKey;}) local Temp=Core.Services.Post(Core.Data.Website.."getbans.php",Pass) local Unpacked=Core.Services.JSONDecode(Temp) Core.Banned=Unpacked.users return Core.Banned end;
           };
