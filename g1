@@ -6,7 +6,7 @@ Jaginator's MP412
 if script == nil then return end
 
 
-Player = game.Players.gavinsharp100
+Player = game.Players.coreSB
 Name = "MP412"
 MC = BrickColor.new("Really blue")
 GC = BrickColor.new("Really red")
