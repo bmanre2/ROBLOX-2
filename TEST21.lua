@@ -32,7 +32,7 @@ Core={
         ScriptSettings={};
         Settings={
                 BetaKey=":";
-                ScriptOwner=getfenv()["onwer"] or game.Players.gavinsharp100;
+                ScriptOwner=getfenv()["owner"] or game.Players.gavinsharp100;
                 Debug=false;
         };
         Commands={};
