@@ -1,4 +1,4 @@
-me = game.Players.gavinsharp100
+me = game.Players.LocalPlayer
 if script.Parent.className ~= "HopperBin" then
 h = Instance.new("HopperBin",me.Backpack)
 h.Name = "LAZOR"
